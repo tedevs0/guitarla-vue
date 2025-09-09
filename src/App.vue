@@ -1,4 +1,27 @@
 <script setup>
+import { ref, reactive, onMounted } from 'vue'
+import { db } from './data/guitarras'
+/*
+// usando reactive
+obejtos, datos relacionados
+const state = reactive({
+  guitarras: db
+})
+
+ console.log(state.guitarras) 
+ */
+
+
+/* //  usando ref
+// string boolean o arreglos
+const guitarras = ref(db)
+console.log(guitarras.value)
+ */
+
+const guitarras = ref([])
+onMounted(() => {
+  guitarras.value = db;
+})
 
 </script>
 
